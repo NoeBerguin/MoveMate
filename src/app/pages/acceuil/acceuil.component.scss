@@ -1,0 +1,59 @@
+.body {
+  width: 100%;
+  height: 100%;
+  background-color: rgb(162, 204, 240);
+}
+.logo{
+    display: flex;
+    margin:auto;
+    align-items: center;
+}
+
+.app {
+  margin: auto;
+  width: 50%;
+  height: 50%;
+}
+
+.item {
+  padding-top: 50px;
+}
+
+mat-slider {
+  width: 300px;
+}
+
+.mat-slider-horizontal {
+  min-width: 200px;
+}
+
+.mat-stepper-horizontal {
+  margin-top: 8px;
+}
+
+.mat-form-field {
+  margin-top: 16px;
+}
+
+button {
+  border-style: solid;
+  border-width: 1px;
+  border-color: black;
+}
+
+.mat-horizontal-stepper {
+  border-style: solid;
+  border-width: 1px;
+  border-color: black;
+}
+
+.bill {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  margin: auto;
+  font-size: 24px;
+}
+
+.total{
+    font-size:50px;
+}

@@ -1,0 +1,65 @@
+<div class="body">
+
+<img  class="logo"src="../../../assets/logo.png"/>
+
+
+  <mat-card class="app">
+    <mat-horizontal-stepper [linear]="isLinear" #stepper>
+      <mat-step [stepControl]="firstFormGroup">
+        <form [formGroup]="firstFormGroup">
+          <div class="item">
+          <ng-template matStepLabel>Number of hours</ng-template>
+          <p>Please, choose the number of hours you need : </p>
+          <mat-slider (change)="onChange($event)" thumbLabel tickInterval="1" min="0" max="24">number of hour</mat-slider>
+          <div>
+            <button mat-button matStepperNext>Next</button>
+          </div>
+        </div>
+        </form>
+      </mat-step>
+      <mat-step [stepControl]="secondFormGroup" label="Date">
+        <form [formGroup]="secondFormGroup">
+          <div class="item">
+            <p>Now choose when you whant us to pick-up your stuff :</p>
+            <mat-form-field>
+              <mat-label>Choose a date</mat-label>
+              <input matInput [matDatepicker]="picker" placeholder="Input events"
+              (dateInput)="addEvent($event)">
+              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker #picker ></mat-datepicker>
+            </mat-form-field>
+            <div>
+              <button mat-button matStepperPrevious>Back</button>
+              <button mat-button matStepperNext>Next</button>
+            </div>
+          </div>
+        </form>
+      </mat-step>
+      <mat-step>
+        <ng-template matStepLabel>Done</ng-template>
+        <div class="bill"> 
+        <p>Number of hours : {{hours}}</p>
+        <p>Date : {{events}}</p>
+        <p class="total">total : {{calculPrice()}} $</p>
+        </div>
+        <div>
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-button (click)="stepper.reset()">Reset</button>
+        </div>
+      </mat-step>
+    </mat-horizontal-stepper>
+
+
+
+    <!-- <div class="item">
+      <mat-form-field appearance="fill">
+        <mat-label>Choose a date</mat-label>
+        <input matInput [matDatepicker]="picker">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+    </div>
+    <mat-slider class="item" thumbLabel tickInterval="1" min="1" max="24">number of hour</mat-slider> -->
+
+  </mat-card>
+</div>
